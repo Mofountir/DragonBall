@@ -201,7 +201,32 @@ export class Game {
   /**
    * Dessiner les éléments du jeu
    */
-  draw() {}
+  draw() {
+    // Fond
+    const gradient = this.ctx.createLinearGradient(0, 0, 0, this.canvas.height);
+    gradient.addColorStop(0, "#1a1a2e");
+    gradient.addColorStop(1, "#16213e");
+    this.ctx.fillStyle = gradient;
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+    // Éléments du jeu
+    this.obstacles.forEach((obstacle) => {
+      if (typeof obstacle.draw === "function") {
+        obstacle.draw(this.ctx);
+      }
+    });
+    this.ennemis.forEach((ennemi) => {
+      if (typeof ennemi.draw === "function") {
+        ennemi.draw(this.ctx);
+      }
+    });
+    if (typeof this.dragonBall.draw === "function") {
+      this.dragonBall.draw(this.ctx);
+    }
+    if (typeof this.joueur.draw === "function") {
+      this.joueur.draw(this.ctx);
+    }
+  }
 
   /**
    * Start & game over
