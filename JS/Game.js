@@ -1,3 +1,9 @@
+import { Monstre } from './Monstre.js';
+import { Obstacle } from './Obstacle.js';
+import { ObstacleAnime } from './ObstacleAnime.js';
+import { Exit } from './Exit.js';
+import { EcouteurClavier } from './EcouteurClavier.js';
+
 export class Game {
   constructor(canvas) {
     this.canvas = canvas;
@@ -64,7 +70,20 @@ export class Game {
         nouveauY = Math.max(0, Math.min(this.canvas.height - this.joueur.hauteur, nouveauY));
     }
 
-    
+    // Collisions avec les obstacles
+    let collision = false;
+    for (const obstacle of this.obstacles) {
+        if (this.checkCollision(
+            {x: nouveauX, y: nouveauY, largeur: this.joueur.largeur, hauteur: this.joueur.hauteur},
+            obstacle
+        )) {
+            collision = true;
+            this.joueur.declencherCollision();
+            this.vitesseJoueur.x *= -0.5;
+            this.vitesseJoueur.y *= -0.5;
+            break;
+        }
+    }
 
   }
 
