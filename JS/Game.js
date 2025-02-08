@@ -63,7 +63,13 @@ export class Game {
         this.vitesseJoueur.y *= -0.5;
         nouveauY = Math.max(0, Math.min(this.canvas.height - this.joueur.hauteur, nouveauY));
     }
+
+    
+
   }
+
+
+
 
   /**
    * Dessiner les éléments du jeu
