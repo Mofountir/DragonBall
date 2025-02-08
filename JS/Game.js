@@ -170,27 +170,54 @@ export class Game {
     } while (this.estTropProche(this.dragonBall.x, this.dragonBall.y));
   }
 
+  // verifier les collisions
+  checkCollision(rect1, rect2) {
+    return (
+      rect1.x < rect2.x + rect2.largeur &&
+      rect1.x + rect1.largeur > rect2.x &&
+      rect1.y < rect2.y + rect2.hauteur &&
+      rect1.y + rect1.hauteur > rect2.y
+    );
+  }
 
-    /**
-     * Vérifier si un point est trop proche des obstacles
-     */
-    estTropProche(x, y, distance = 100) {
-        if (Math.hypot(x - this.joueur.x, y - this.joueur.y) < distance) return true;
-        
-        for (const obstacle of this.obstacles) {
-            if (Math.hypot(x - obstacle.x, y - obstacle.y) < 60) return true;
-        }
-        
-        for (const ennemi of this.ennemis) {
-            if (Math.hypot(x - ennemi.x, y - ennemi.y) < 60) return true;
-        }
-        
-        return false;
+  /**
+   * Vérifier si un point est trop proche des obstacles
+   */
+  estTropProche(x, y, distance = 100) {
+    if (Math.hypot(x - this.joueur.x, y - this.joueur.y) < distance)
+      return true;
+
+    for (const obstacle of this.obstacles) {
+      if (Math.hypot(x - obstacle.x, y - obstacle.y) < 60) return true;
     }
 
+    for (const ennemi of this.ennemis) {
+      if (Math.hypot(x - ennemi.x, y - ennemi.y) < 60) return true;
+    }
+
+    return false;
+  }
 
   /**
    * Dessiner les éléments du jeu
    */
   draw() {}
+
+  /**
+   * Start & game over
+   */
+
+  gameOver() {
+    this.gameOverState = true;
+  }
+
+  demarrer() {
+    this.initLevel();
+    const gameLoop = () => {
+      this.update();
+      this.draw();
+      requestAnimationFrame(gameLoop);
+    };
+    gameLoop();
+  }
 }
