@@ -4,7 +4,7 @@
 Incarnez Majin Buu et collectez les Dragon Balls pour restaurer vos pouvoirs tout en évitant les obstacles et les ennemis.
 
 ## 🚀 Lien du Jeu
-Accédez au jeu ici : [Dragon Ball - Le Jeu de Majin Buu](https://votre-lien-vercel.vercel.app)
+Accédez au jeu ici : [Dragon Ball - Le Jeu de Majin Buu](https://dragon-ball-1-one.vercel.app/)
 
 ## 🎮 Instructions
 - Utilisez les flèches du clavier pour déplacer Majin Buu.
