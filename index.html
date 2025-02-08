@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball - Le Jeu de Majin Buu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="header">
+            <h1>Dragon Ball - Le Jeu de Majin Buu</h1>
+        </header>
+
+        <div class="game-context">
+            <h2>L'Histoire</h2>
+            <p>Majin Buu s'est réveillé et doit collecter les Dragon Balls pour restaurer ses pouvoirs ! Aidez-le à traverser les niveaux tout en évitant les pièges et les ennemis.</p>
+        </div>
+
+        <div class="game-area">
+            <div class="canvas-container">
+                <div class="timer-bar-container">
+                    <div class="timer-bar"></div>
+                </div>
+                <canvas id="gameCanvas" width="800" height="600"></canvas>
+            </div>
+
+            <div class="game-info">
+                <div class="rules">
+                    <h3>Règles du Jeu</h3>
+                    <ul>
+                        <li>Utilisez les flèches du clavier pour déplacer Majin Buu</li>
+                        <li>Attrapez la Dragon Ball pour passer au niveau suivant</li>
+                        <li>Évitez les obstacles et les ennemis</li>
+                        <li>Soyez rapide ! Le temps est compté</li>
+                    </ul>
+                </div>
+
+                <div class="level-info">
+                    Niveau: <span id="currentLevel">1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
