@@ -9,7 +9,7 @@ Accédez au jeu ici : [Dragon Ball - Le Jeu de Majin Buu](https://dragon-ball-1-
 ## 🎮 Instructions
 - Utilisez les flèches du clavier pour déplacer Majin Buu.
 - Attrapez la Dragon Ball pour passer au niveau suivant.
-- Évitez les obstacles et les ennemis.
+- Évitez les obstacles et les ennemis (Toucher un ennemis = revenir à 0).
 - Soyez rapide ! Le temps est compté.
 
 ## 📂 Structure du Projet
